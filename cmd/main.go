@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-    filePath := "/home/jlagos/argos/internal/config/hosts.txt"
+    filePath := "../internal/config/hosts.txt"
 	hosts := config.LoadHosts(filePath)
 
     for _, host := range hosts {
