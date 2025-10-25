@@ -1,22 +1,22 @@
 package ping
 
 import (
-	"strings"
 	"os/exec"
+	"strings"
 )
 
-type result struct {
+type Connection struct {
 	Status string
 	Latency string
 }
 
-func CheckHost(host string) result {
+func CheckHost(host string) Connection {
 	output, err := exec.Command("ping", "-c", "1", host).CombinedOutput()
 	parsed_out := string(output)
 
 	if err != nil || !strings.Contains(parsed_out, "1 received") {
-	return result{Status: "down"}
+	return Connection{Status: "down"}
 	} else {
-	return result{Status: "up"}
+	return Connection{Status: "up"}
 	}
 }
