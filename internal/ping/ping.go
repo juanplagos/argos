@@ -15,10 +15,8 @@ func CheckHost(host string) result {
 	parsed_out := string(output)
 
 	if err != nil || !strings.Contains(parsed_out, "1 received") {
-		//fmt.Println(parsed_out)
-		return result{Status: "down"}
+	return result{Status: "down"}
 	} else {
-	//fmt.Println(parsed_out)
 	return result{Status: "up"}
 	}
 }
