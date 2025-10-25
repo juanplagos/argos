@@ -1,0 +1,9 @@
+google.com
+cloudflare.com
+apple.com
+bing.com
+yahoo.com
+duckduckgo.com
+aws.amazon.com
+azure.microsoft.com
+ibm.com
