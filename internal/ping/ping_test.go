@@ -27,12 +27,13 @@ func TestPing(t *testing.T) {
 	t.Run("get latency", func(t *testing.T) {
 
 		connection := CheckHost("google.com")
-			latencyPattern := `^\d+(\.\d+)?\s?ms$`
-			matched, err := regexp.MatchString(latencyPattern, connection.Latency)
-			if err != nil || !matched {
-				t.Errorf("expected latency matching pattern %q, got %q",
-					latencyPattern,
-					connection.Latency)
+		latencyPattern := `^\d+(\.\d+)?\s?ms$`
+		matched, err := regexp.MatchString(latencyPattern, connection.Latency)
+
+		if err != nil || !matched {
+			t.Errorf("expected latency matching pattern %q, got %q",
+				latencyPattern,
+				connection.Latency)
 			}
 		})
 }
