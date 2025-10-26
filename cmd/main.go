@@ -12,6 +12,6 @@ func main() {
 
     for _, host := range hosts {
         output := ping.CheckHost(host)
-        fmt.Printf("%s → %s\n", host, output.Status)
+        fmt.Printf("%s → %s\n - latency: %s\n\n", host, output.Status, output.Latency)
     }
 }
